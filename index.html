@@ -60,7 +60,7 @@ if(num.value===""  ){
    // getting the user input  and giving in the number api
 
         var h1=document.querySelector("h2")
-     fetch(`https://numbersapi.com/${num.value}/${val}`)
+     fetch(`http://numbersapi.com/${num.value}/${val}`)
      .then(function(response) {
     return response.text();
       })
