@@ -1,2 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quotesgenerator</title>
+    <meta name="keywords" content="advice.adviceforu">
+    <meta name="description" content="it is used to give u the advice">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+ 
+        }
+        .container{
+            position: absolute;
+            width: 533px;
+            height: 300px;
+            box-shadow: 0px 0px 5px 0px #0f111d;
+            background: linear-gradient(45deg, #20e6ff, #03a9f4);
+            border-radius: 5px;
+            top: 50%;
+            color: white;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 5px;
+          text-align: center;
+        }
+        h1{
+            margin-top: 10px;
+        }
+        h2{
+            padding: 5px;
+         margin-top: 57px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quotes</h1>
+        <h2>loading....</h2>
+    </div>
+    <script>
+        window.onload=()=>{
+            fetch("https://api.adviceslip.com/advice")
+            .then(res=>res.json())
+            .then(data=>{
+                const h2= document.querySelector("h2");
+                h2.innerText=data.slip.advice;
+            })
+        }
+    </script>
+</body>
+</html>
 
 
